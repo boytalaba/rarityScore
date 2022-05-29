@@ -243,7 +243,7 @@ const set_nft_rank = (nft, rank) => {
  */
 const set_nfts_rank = () => {
   nfts = nfts
-    .map((nft) => getNFT(nft.id))
+    .map((nft) => getNFT(nft.edition))
     .sort((x, y) => y["rarity_score"] - x["rarity_score"])
     .map((nft, index) => set_nft_rank(nft, index))
     .sort((x, y) => x["edition"] - y["edition"]);
@@ -450,8 +450,8 @@ export const getFilters = (traits, atr) => {
 
 /**
  * Filters NFT by which page, order, attr count (app)
- * @param {*} page_id : used to page buttons at the bottom
- * @param {*} sort_by : used by order filters in the order for which field e.g., rarity/token id
+ * @param {*} page_edition : used to page buttons at the bottom
+ * @param {*} sort_by : used by order filters in the order for which field e.g., rarity/token edition
  * @param {*} order : used by order filters in the sidebar for asc/desc
  * @param {*} traits : used by trait filters on the sidebar for e.g., Hair
  * @param {*} attr_count : used by trait filters
