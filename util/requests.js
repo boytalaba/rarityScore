@@ -6,8 +6,8 @@ let basePath =
     ? `http://${config.LOCAL_API_URL}`
     : `https://${config.API_URL}`;
 
-export const getNFT = async (id) => {
-  const res = await fetch(`${basePath}/api/nft?id=${id}`);
+export const getNFT = async (edition) => {
+  const res = await fetch(`${basePath}/api/nft?id=${edition}`);
   const data = await res.json();
   return data;
 };
@@ -24,9 +24,9 @@ export const getFilters = async (query) => {
   return data;
 };
 
-export const getNFTInfo = async (id) => {
+export const getNFTInfo = async (edition) => {
   const res = await fetch(
-    `https://api.opensea.io/api/v1/assets?collection=${config.COLLECTION_NAME.toLowerCase()}&token_ids=${id}&format=json`
+    `https://api.opensea.io/api/v1/assets?collection=${config.COLLECTION_NAME.toLowerCase()}&token_ids=${edition}&format=json`
   );
   const data = await res.json();
   return data;
