@@ -103,12 +103,12 @@ function NFT({ nft, title }) {
             )}
             <div className="py-4 flex flex-col items-start justify-start">
               {/* <h2 className="px-2 text-xl mb-2 font-bold text-gray-800">Traits</h2> */}
-              {nft?.attributes?.map((attribute, idx) => (
-                <Trait key={idx} {...attribute} />
+              {nft?.attributes?.map((attribute, editionx) => (
+                <Trait key={editionx} {...attribute} />
               ))}
               {/* <h2 className="px-2 text-xl mb-2 font-bold text-gray-800">Missing Traits</h2> */}
-              {nft?.missing_traits?.map((attribute, idx) => (
-                <Trait key={idx * 100} {...attribute} />
+              {nft?.missing_traits?.map((attribute, editionx) => (
+                <Trait key={editionx * 100} {...attribute} />
               ))}
             </div>
           </div>
@@ -120,8 +120,8 @@ function NFT({ nft, title }) {
 }
 
 NFT.getInitialProps = async ({ query }) => {
-  let nft = await getNFT(config.STARTING_INDEX == 1 ? query.id - 1 : query.id);
-  // let opensea_info = await getNFTInfo(query.id);
+  let nft = await getNFT(config.STARTING_INDEX == 1 ? query. - 1 : query.edition);
+  // let opensea_info = await getNFTInfo(query.edition);
   // nft["opensea_link"] = opensea_info["assets"][0]["permalink"];
   nft["current_price"] = "-";
   // if (opensea_info["assets"][0]["sell_orders"])
