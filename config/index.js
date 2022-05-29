@@ -1,7 +1,7 @@
 export const config = {
   env: "prod",
   LOCAL_API_URL: "localhost:3000",
-  API_URL: "https://rarity-score-foc5vozt7-boytalaba.vercel.app/",
+  API_URL: "rarity-score-foc5vozt7-boytalaba.vercel.app",
   COLLECTION_NAME: "ChickElon",
   COLLECTION_TITLE: "ChickElon NFT",
   COLLECTION_DESCRIPTION: '2222 unique generated NFTS.',
