@@ -246,7 +246,7 @@ const set_nfts_rank = () => {
     .map((nft) => getNFT(nft.id))
     .sort((x, y) => y["rarity_score"] - x["rarity_score"])
     .map((nft, index) => set_nft_rank(nft, index))
-    .sort((x, y) => x["dna"] - y["dna"]);
+    .sort((x, y) => x["edition"] - y["edition"]
 };
 
 /**
@@ -410,16 +410,16 @@ const add_normalized_rarities = (all_traits, collection_stats) => {
 };
 
 /**
- * Retrieve NFT for specific dna
+ * Retrieve NFT for specific edition
  * Function is responsible for all computation of rarity score for token
- * @param {*} dna : token "dna" from collection.json
+ * @param {*} edition : token "edition" from collection.json
  * @returns nft token after all calculations
  */
-export const getNFT = (dna) => {
-  // Retrieve nft for dna
+export const getNFT = (edition) => {
+  // Retrieve nft for edition
   // Precompute the frequency for each trait
-  nfts = nfts.sort((x, y) => x["dna"] - y["dna"]);
-  let nft = nfts[dna];
+  nfts = nfts.sort((x, y) => x["edition"] - y["edition"]);
+  let nft = nfts[edition];
   if (nft) {
     filter_nft_attributes(nft);
     set_trait_rarity(nft, all_traits);
