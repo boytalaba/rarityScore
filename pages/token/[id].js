@@ -103,12 +103,12 @@ function NFT({ nft, title }) {
             )}
             <div className="py-4 flex flex-col items-start justify-start">
               {/* <h2 className="px-2 text-xl mb-2 font-bold text-gray-800">Traits</h2> */}
-              {nft?.attributes?.map((attribute, editionx) => (
-                <Trait key={editionx} {...attribute} />
+              {nft?.attributes?.map((attribute, idx) => (
+                <Trait key={idx} {...attribute} />
               ))}
               {/* <h2 className="px-2 text-xl mb-2 font-bold text-gray-800">Missing Traits</h2> */}
-              {nft?.missing_traits?.map((attribute, editionx) => (
-                <Trait key={editionx * 100} {...attribute} />
+              {nft?.missing_traits?.map((attribute, idx) => (
+                <Trait key={idx * 100} {...attribute} />
               ))}
             </div>
           </div>
