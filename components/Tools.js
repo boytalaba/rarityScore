@@ -53,7 +53,7 @@ export const Tools = (props) => {
       }
     }
 
-    if (option.toLowerCase().includes("id")) {
+    if (option.toLowerCase().includes("edition")) {
       if (option.includes("desc")) {
         router.push(
           `?${json2query({
@@ -68,7 +68,7 @@ export const Tools = (props) => {
         router.push(
           `?${json2query({
             ...router.query,
-            sort_by: "id",
+            sort_by: "edition",
             order: "asc",
             page_id: 0,
           })}`
@@ -136,11 +136,11 @@ export const Tools = (props) => {
         </a>
       )}
 
-      {!(sort_by == "id" && order == "desc") && (
+      {!(sort_by == "edition" && order == "desc") && (
         <a
           className="hover:bg-gray-300 hover:text-gray-900 cursor-pointer text-gray-700 py-2 px-2 rounded-md w-full flex items-center"
           onClick={() => {
-            handleChange("id desc");
+            handleChange("edition desc");
           }}
         >
           <span className="text-xs">
@@ -149,11 +149,11 @@ export const Tools = (props) => {
           <span className="text-xs">&nbsp;&nbsp;Token ID</span>
         </a>
       )}
-      {!(sort_by == "id" && order == "asc") && (
+      {!(sort_by == "edition" && order == "asc") && (
         <a
           className="hover:bg-gray-300 hover:text-gray-900 cursor-pointer text-gray-700 py-2 px-2 rounded-md w-full flex items-center"
           onClick={() => {
-            handleChange("id asc");
+            handleChange("edition asc");
           }}
         >
           <span className="text-xs">
