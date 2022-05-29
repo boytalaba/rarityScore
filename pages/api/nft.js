@@ -1,7 +1,7 @@
 import { getNFT } from "../../util/nfts"
 
 export default function nftAPI(req, res) {
-  const { edition } = req.query
-  const nft = getNFT(edition);
+  const { id } = req.query
+  const id = getNFT(edition);
   res.status(200).json(nft)
 }
