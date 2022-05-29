@@ -1,14 +1,14 @@
 import { config } from "../config";
 
 let basePath =
-  config.env == "local"
+  config.env == "prod"
     ? `http://${config.LOCAL_API_URL}`
     : `https://${config.API_URL}`;
 
 export const getDesc = (nft) => {
   let desc;
   desc = `
-  🔷EDITION: ${config.STARTING_INDEX == 1 ? nft.edition + 1 : nft.edition}
+  🔷EDITION: ${config.STARTING_INDEX == 0 ? nft.edition + 1 : nft.edition}
   
   🔷Rarity score: ${nft.rarity_score.toFixed(2)}
   
