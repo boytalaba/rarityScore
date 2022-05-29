@@ -6,6 +6,6 @@ export const config = {
   COLLECTION_TITLE: "ChickElon NFT",
   COLLECTION_DESCRIPTION: '2222 unique generated NFTS.',
   COLLECTION_IMG_LINK: "",
-  STARTING_INDEX: 0,
+  STARTING_INDEX: -1,
   WEIGHTS: {},
 };
